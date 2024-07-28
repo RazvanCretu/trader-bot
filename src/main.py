@@ -9,14 +9,15 @@ print("MetaTrader5 package version: ",mt5.__version__)
 
 # establish connection to the MetaTrader 5 terminal
 if mt5.initialize("C:\\Program Files\\MT5\\terminal64.exe",login=int(os.environ['ADMIRALS_ACCOUNT']),password=os.environ['ADMIRALS_PASS'],server='acs50.admiralmarkets.com'):
-    time.sleep(2)
+    time.sleep(15)
 
     from_date=datetime(2024,1,1)
     to_date=datetime.now()
 
     deals=mt5.history_orders_get(from_date, to_date)
 
-    print(pd.DataFrame(deals, columns=deals[0]._asdict().keys()))
+    # print(pd.DataFrame(deals, columns=deals[0]._asdict().keys()))
+    pd.DataFrame(deals, columns=deals[0]._asdict().keys()).to_csv(".\\output.csv",index=False)
 
     mt5.shutdown()
 else:
