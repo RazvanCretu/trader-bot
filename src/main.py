@@ -16,7 +16,7 @@ if mt5.initialize("C:\\Program Files\\MetaTrader5\\terminal64.exe",login=int(os.
     deals=mt5.history_orders_get(from_date, to_date)
 
     # print(pd.DataFrame(deals, columns=deals[0]._asdict().keys()))
-    pd.DataFrame(deals, columns=deals[0]._asdict().keys()).to_csv(".\\output.csv",index=False)
+    pd.DataFrame(deals, columns=deals[0]._asdict().keys()).to_csv("S:\\output.csv",index=False)
 
     mt5.shutdown()
 else:
