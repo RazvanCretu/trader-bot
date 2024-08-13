@@ -9,6 +9,7 @@ print("MetaTrader5 package version: ",mt5.__version__)
 
 # establish connection to the MetaTrader 5 terminal
 if mt5.initialize("C:\\Program Files\\MetaTrader5\\terminal64.exe",login=int(os.environ['ADMIRALS_ACCOUNT']),password=os.environ['ADMIRALS_PASS'],server='acs50.admiralmarkets.com',timeout=120000):
+    time.sleep(10)
 
     from_date=datetime(2024,1,1)
     to_date=datetime.now()
