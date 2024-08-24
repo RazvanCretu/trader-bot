@@ -39,12 +39,10 @@ class Connection:
         """
         Returns rates for a specified symbol given a timerange in a DataFrame format.
         """
-        # rates = mt5.copy_rates_from(symbol,timeframe,start,10000)
         rates = mt5.copy_rates_range(symbol,timeframe,start,end)
         df=DataFrame(rates)
         df['time']=to_datetime(df['time'], unit='s')
         print(df)
-        print(mt5.last_error())
         pass
 
 
