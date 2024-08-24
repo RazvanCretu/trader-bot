@@ -2,3 +2,5 @@ env/
 *.env
 *.ipynb
 *.csv
+
+__pycache__
