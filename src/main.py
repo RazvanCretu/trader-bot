@@ -15,7 +15,7 @@ with Connection(int(os.environ['ADMIRALS_ACCOUNT']),os.environ['ADMIRALS_PASS'],
     from_date=datetime(2000,1,1)
     to_date=datetime.now()
 
-    con.get_rates("[SP500]",mt5.TIMEFRAME_D1,from_date,to_date)
+    print(con.get_rates("[SP500]",mt5.TIMEFRAME_D1,from_date,to_date))
 
 # establish connection to the MetaTrader 5 terminal
 if mt5.initialize("C:\\Program Files\\MetaTrader5\\terminal64.exe",login=int(os.environ['ADMIRALS_ACCOUNT']),password=os.environ['ADMIRALS_PASS'],server='acs50.admiralmarkets.com',timeout=180000,portable=True):
