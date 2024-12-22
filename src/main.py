@@ -17,9 +17,9 @@ with Connection(int(os.environ['ADMIRALS_ACCOUNT']),os.environ['ADMIRALS_PASS'],
 
     print(con.get_rates("[SP500]",mt5.TIMEFRAME_D1,from_date,to_date))
 
-    positions=con.positions_get()
-    deals=con.history_deals_get(from_date, to_date)
-    orders=con.history_orders_get(from_date, to_date)
+    positions=mt5.positions_get()
+    deals=mt5.history_deals_get(from_date, to_date)
+    orders=mt5.history_orders_get(from_date, to_date)
 
     print(mt5.DEAL_TYPE_CREDIT)
 
